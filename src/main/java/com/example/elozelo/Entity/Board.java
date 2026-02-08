@@ -14,7 +14,7 @@ public class Board {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String title;
+    private String name;
 
     @OneToMany(mappedBy = "board",  cascade = CascadeType.ALL)
     private List<TaskColumn> columns;

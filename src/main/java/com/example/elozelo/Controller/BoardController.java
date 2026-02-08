@@ -49,8 +49,8 @@ public class BoardController {
             return ResponseEntity.notFound().build();
         }
 
-        if (entity.getTitle() != null) {
-            entity.setTitle(dto.getTitle());
+        if (entity.getName() != null) {
+            entity.setName(dto.getName());
         }
 
 
@@ -64,7 +64,7 @@ public class BoardController {
     @PostMapping
     public ResponseEntity<BoardDTO> createBoard(@RequestBody BoardDTO dto) {
         Board entity = new Board();
-        entity.setTitle(dto.getTitle());
+        entity.setName(dto.getName());
         Board savedEntity = repository.save(entity);
         return ResponseEntity.ok(mapToDTO(savedEntity));
     }
@@ -83,7 +83,7 @@ public class BoardController {
     private BoardDTO mapToDTO(Board entity) {
         BoardDTO dto = new BoardDTO();
         dto.setId(entity.getId());
-        dto.setTitle(entity.getTitle());
+        dto.setName(entity.getName());
 
         if (entity.getColumns() != null) {
             List<TaskColumnDTO> taskColumnDTOS = entity.getColumns().stream()
@@ -118,7 +118,7 @@ public class BoardController {
     private TaskDTO mapTaskToDTO(Task entity) {
         TaskDTO dto = new TaskDTO();
         dto.setId(entity.getId());
-        dto.setTitle(entity.getTitle());
+        dto.setName(entity.getName());
 
         if (entity.getColumn() != null) {
             dto.setColumnId(entity.getColumn().getId());

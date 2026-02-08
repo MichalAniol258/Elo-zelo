@@ -115,7 +115,7 @@ public class TaskColumnController {
     private TaskDTO mapTaskToDTO(Task entity) {
         TaskDTO dto = new TaskDTO();
         dto.setId(entity.getId());
-        dto.setTitle(entity.getTitle());
+        dto.setName(entity.getName());
 
         if (entity.getColumn() != null) {
             dto.setColumnId(entity.getColumn().getId());

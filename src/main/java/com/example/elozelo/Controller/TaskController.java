@@ -47,8 +47,8 @@ public class TaskController {
             return ResponseEntity.notFound().build();
         }
 
-        if (dto.getTitle() != null) {
-            entity.setTitle(dto.getTitle());
+        if (dto.getName() != null) {
+            entity.setName(dto.getName());
         }
 
 
@@ -65,7 +65,7 @@ public class TaskController {
     @PostMapping
     public ResponseEntity<TaskDTO> createTask(@RequestBody TaskDTO dto) {
         Task entity = new Task();
-        entity.setTitle(dto.getTitle());
+        entity.setName(dto.getName());
 
         if (dto.getColumnId() != null) {
             TaskColumn column = taskColumnRepository.findById(dto.getColumnId())
@@ -91,7 +91,7 @@ public class TaskController {
     private TaskDTO mapToDTO(Task entity) {
         TaskDTO dto = new TaskDTO();
         dto.setId(entity.getId());
-        dto.setTitle(entity.getTitle());
+        dto.setName(entity.getName());
 
         if (entity.getColumn() != null) {
             dto.setColumnId(entity.getColumn().getId());
