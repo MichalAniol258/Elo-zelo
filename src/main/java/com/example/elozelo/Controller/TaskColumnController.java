@@ -7,7 +7,6 @@ import com.example.elozelo.Entity.Task;
 import com.example.elozelo.Entity.TaskColumn;
 import com.example.elozelo.Repository.BoardRepository;
 import com.example.elozelo.Repository.TaskColumnRepository;
-import com.example.elozelo.Repository.TaskRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,7 +21,6 @@ import java.util.stream.Collectors;
 public class TaskColumnController {
     private final TaskColumnRepository repository;
     private final BoardRepository boardRepository;
-    private final TaskRepository taskRepository;
 
     @GetMapping
     public List<TaskColumnDTO> getAllTaskColumns() {

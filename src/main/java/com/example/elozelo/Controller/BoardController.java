@@ -9,7 +9,6 @@ import com.example.elozelo.Entity.Board;
 import com.example.elozelo.Entity.Task;
 import com.example.elozelo.Entity.TaskColumn;
 import com.example.elozelo.Repository.BoardRepository;
-import com.example.elozelo.Repository.TaskColumnRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,7 +22,6 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class BoardController {
     private final BoardRepository repository;
-    private final TaskColumnRepository columnRepository;
 
     @GetMapping()
     public List<BoardDTO> getAllBoards() {

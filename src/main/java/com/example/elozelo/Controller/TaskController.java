@@ -1,13 +1,13 @@
 package com.example.elozelo.Controller;
 
 import com.example.elozelo.DTO.TaskDTO;
-import com.example.elozelo.Entity.Board;
+
 import com.example.elozelo.Entity.Task;
 import com.example.elozelo.Entity.TaskColumn;
-import com.example.elozelo.Repository.BoardRepository;
+
 import com.example.elozelo.Repository.TaskColumnRepository;
 import com.example.elozelo.Repository.TaskRepository;
-import jakarta.persistence.Column;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
