@@ -1,0 +1,12 @@
+package com.example.elozelo.DTO;
+
+import lombok.Data;
+
+import java.util.List;
+
+@Data
+public class BoardDTO {
+    private Long id;
+    private String title;
+    private List<TaskColumnDTO> columns;
+}

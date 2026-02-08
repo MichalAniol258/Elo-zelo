@@ -1,0 +1,28 @@
+services:
+  db:
+    image: postgres:16
+    container_name: elozelo
+    restart: always
+    environment:
+      POSTGRES_USER: MichalAniol
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: elozelo
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin_ui
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ramianbartek@gmail.com # Login do panelu www
+      PGADMIN_DEFAULT_PASSWORD: admin         # Hasło do panelu www
+    ports:
+      - "5050:80"                             # Będzie pod localhost:5050
+    depends_on:
+      - db
+
+volumes:
+  db_data:
